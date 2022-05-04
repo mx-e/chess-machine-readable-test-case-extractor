@@ -1,8 +1,5 @@
 import chess, re, chess.variant, json
 
-from numpy import full
-
-
 def get_all_fen_strings(filename):
     with open(filename, 'r') as file:
         content = file.read()
@@ -13,17 +10,14 @@ def get_all_fen_strings(filename):
     full_fen_matches=re.findall('''(?:(?:(?:[rnbqkpRNBQKP1-8]+\/){7})[rnbqkpRNBQKP1-8]+)\s(?:[b|w])\s(?:-|[K|Q|k|q]{1,4})\s(?:-|[a-h][1-8])\s(?:\d+\s\d+)''', content)
 
     for fen in list(full_fen_matches):
-        print(fen)
         content = content.replace(fen, '')
         full_fens.append(fen)
 
     partial_fen_matches = re.findall('''(?:(?:(?:[rnbqkpRNBQKP1-8]+\/){7})[rnbqkpRNBQKP1-8]+)\s(?:[b|w])\s''', content)
 
     for fen in list(partial_fen_matches):
-        print(fen)
         partial_fens.append(fen)
 
-    print(len(full_fens) + len(partial_fens))
     return full_fens, partial_fens
 
 def full_fen_from_partial_fen(fen):
@@ -56,7 +50,7 @@ def write_json_to_file(dict, filename):
         file.write(str)
 
 
-full_fens, partial_fens = get_all_fen_strings('chess_wiki.txt')
+full_fens, partial_fens = get_all_fen_strings('in/chess_wiki.txt')
 test_data = {}
 
 for fen in full_fens:
