@@ -6,4 +6,4 @@ This extractor extracts FEN strings from chess documentation text and generates 
 - Generating legal moves from boards (with [chess-python library](https://github.com/niklasf/python-chess))
 - Generating subsequent boards from moves (with [chess-python library](https://github.com/niklasf/python-chess))
 
-It reads full FEN strings and partial FEN strings (only the board and to_move parts) and generates two output files. One only from fully readable FEN strings and one from all matches.
+The extractor reads full FEN strings and partial FEN strings (only the board and to_move parts) and generates two output files. One only from fully readable FEN strings and one from all matches.
