@@ -1,0 +1,266 @@
+= Stellungen zum Testen des Zuggenerators =
+(jede Stellung unter einer eigenen Überschrift beschreiben)
+
+== Stellung 1 Startstellung ==
+FEN: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w
+
+20 Züge (16 Bauernzüge und 4 Springerzüge)
+
+== Stellung Giuoco Piano (Gruppe AI)  ==
+FEN: rnbqkbnr/1pppppp1/p6p/8/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3
+
+18 Züge (2 Turmzüge, 2 Springerzüge, 14 Bauernzüge):
+
+Ra7, Rh7, Nc6, Nf6, b6, b5, c6, c5, d6, d5, e6, e5, f6, f5, g6, g5, a5, h5
+
+== Stellung Dutch Defense (Gruppe AI)  ==
+
+FEN: rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2
+
+28 Züge (15 Bauernzüge, 5 Läuferzüge, 5 Springerzüge, 2 Damenzüge, 1 Königszug):
+
+a3, a4, b3, b4, c3, c4, d5, e3, e4, f3, f4, g3, g4, h3, h4, Bd2, Be3, Bf4, Bg5, Bh6, Na3, Nc3, Nd2, Nf3, Nh3, Qd2, Qd3, Kd2
+
+== Stellung nicht erlaubter En passant (Gruppe B) ==
+
+last move: pc6->c5
+
+FEN:rnbqkbnr/pp1p1ppp/4p3/1Pp5/8/2N5/P1PPPPPP/R1BQKBNR w 
+
+Mögliche Züge: 21 Moves = 6*2 pawn moves + 1 PAWN MOVE (c5 , DARF KEIN EN PASSANT) + 3 Knight moves + 1 Rook moves + 2 Knight moves + 2 Bishop moves
+
+== Stellung Rochade (Gruppe H) ==
+ FEN: 1rbqk2r/3nBppp/p2p4/3Qp3/Pp2P3/6PB/1PP1NP1P/R3K2R w
+
+Kleine und große Rochade möglich für weiß im nächsten Zug.
+
+(7 Pawn moves, 7 Rook moves, 10 Bishop moves, 14 Queen moves, 5 Knight moves, 3 King moves, 2 Castling moves)
+
+== Weißer König steht im Schach (Gruppe E) ==
+
+rnb1kbnr/pp1ppppp/2p5/q7/8/3P1P2/PPP1P1PP/RNBQKBNR w KQkq - 0 1
+
+7 mögliche züge: Kf2, Bd2, Qd2, Nc3, Nd2, b4, c3
+
+== schwarz am Zug, Zwei schwarze Damen und Bauern (Gruppe E) ==
+
+7k/7q/5pqp/6p1/NP3P1P/1KP3P1/2B5/8 b - - 0 1
+
+24 mögliche Züge
+
+== Stelllung Rochade und Pin (Gruppe F)==
+
+Fen: r2kq3/3r4/8/8/7b/p7/P3BN2/R3K2R w KQq - 0 1
+
+Legale Züge:
+
+Rb1, Rc1, Rd1, Rf1, Rg1, Rh2, Rh3, Rxh4,
+
+Kf1, O-O;
+
+Notiz: Große Rochade nicht möglich
+
+== Stellung Kolision (Gruppe F) ==
+
+Fen: r7/P1P5/p7/P4k2/n7/P1P2K2/1BP2PBN/1QR2R1n w - - 0 1
+
+Legale Züge:
+
+c8=Q, Pc4,
+
+Ba1, Bh3,
+
+Ng4,
+
+Rcd1, Rce1, Rfd1, Rfe1, Rg1,
+
+Qa1, Qa2,
+
+Ke2, Ke3;
+
+== Stellung schwarz Rochade (Gruppe G) ==
+Schwarz Rochade King side möglich, Queen side aber nicht, da der Turm vom Läufer geschlagen wurde.
+
+FEN: B3k2r/p1pqbppp/n2p3n/4p3/6b1/1PPPP1P1/P4P1P/RNBQK1NR b KQk - 0 16
+
+Es gibt 37 legale Züge: 
+
+h8g8, h8f8, e8f8, e8d8, e7f8, e7d8, e7f6, e7g5, e7h4, d7d8, d7c8, d7e6, d7c6, d7f5, d7b5, d7a4, h6g8, h6f5, a6b8, a6c5, a6b4, g4e6, g4h5, g4f5, g4h3, g4f3, g4e2, g4d1, e8g8, g7g6, f7f6, c7c6, d6d5, e5e4, g7g5, f7f5, c7c5
+
+== Stellung weiß en passant pseudo-legal, aber nicht legal (Gruppe G) ==
+Dadurch würde der eigene König im Stach stehen.
+
+FEN: rnb1kbnr/ppp2ppp/8/K2pP2q/5p2/3P4/PPP1B1PP/RNBQ2NR w - d6 0 14
+
+Es gibt 29 legale Züge:
+
+a5b5, a5a4, e2h5, e2g4, e2f3, e2f1, g1h3, g1f3, d1d2, d1f1, d1e1, c1f4, c1e3, c1d2, b1c3, b1a3, b1d2, e5e6, d3d4, h2h3, g2g3, c2c3, b2b3, a2a3, h2h4, g2g4, c2c4, b2b4, a2a4
+
+== Stellung En Passant (Gruppe H) ==
+FEN: r1bq1r2/pp2n3/4N2k/3pPppP/1b1n2Q1/2N5/PP3PP1/R1B1K2R w (letzter Zug p -> G5)
+
+En passant Schlag möglich für weiß im nächsten Zug.
+
+(7 Pawn moves (incl. 1 en passant), 6 Rook moves, 4 Bishop moves, 15 Knight moves, 11 Queen moves, 4 King moves)
+
+== Stellung Endgame 1 (Gruppe R)
+6k1/B5q1/KR6/8/8/8/6p1/8 w - - 0 1
+Mögliche Züge:
+Bb8, Rb8+, Rb7, Rh6, Rg6, Rf6, Re6, Rd6, Rc6, Rb5, Rb4, Rb3, Rb2, Rb1, Kb5, Ka5 
+(16 Möglichkeiten)
+
+== Stellung Endgame Reverse - mit Bauernumwandlung (Gruppe R)
+6k1/B5q1/KR6/8/8/8/6p1/8 b - - 0 1
+Mögliche Züge:
+Kh8, Kf8, Kh7, Kf7, Qh8, Qf8, Qh7, Qf7, Qe7, Qd7, Qc7, Qb7+, Qxa7+, Qh6, Qg6, Qf6, Qg5, Qe5, Qg4, Qd4, Qg3, Qc3, Qb2, Qa1+, g1=Q, g1=R, g1=B, g1=N
+(28 Möglichkeiten)
+
+
+== Stellung Rochade (Gruppe AF) ==
+FEN: r3k2r/ppp1npbp/b3p1p1/8/8/4P3/PPP2PPP/R3K2R w KQkq - 0 1
+
+Bauernzüge: 6*2 + 1 = 13
+Rb1,  Rc1,  Rd1, Rg1, Rf1
+Kd2, Kd1, Kc1
+--> kleine Rochade nicht legal
+
+== Stellungen I (Gruppe O) ==
+FEN:  r1b3k1/ppb2ppp/8/2B1p1P1/1P2N2P/P3P3/2P2P2/3rK2R w - - 0 19
+
+Legale Züge (2):  
+Ke2, Kd1
+
+== Stellungen II (Gruppe O) ==
+FEN: 8/8/6k1/5n2/5P2/7p/2KN4/8 w - - 0 57
+
+Legale Züge (14):  
+Nf1, Nf3, Nc4, Ne4, Nb1, Nb3,
+Kb1, Kb2, Kb3, Kc1, Kc2, Kc3, Kd1, Kd3
+
+
+== Stellung Mittelspiel Gruppe V ==
+
+FEN: r3k1nr/pp3ppp/3p4/3P4/8/3P4/PP3PPP/RN2K2R w KQkq - 0 1
+
+21 Züge (11 Pawn 3 Knight 2 Rook 5 King (4 Normal + 1 Castle))
+
+== Stellung Endspiel Gruppe V ==
+
+FEN: 8/8/1k6/8/8/8/6K1/8 b - - 0 1
+
+8 Züge (8 Königs Züge):
+
+B6A5,B6B5,B6C5,B6C6,B6C7,B6B7,B6A7,B6A6
+
+== Stellung King of the Hill (Gruppe L) ==
+
+FEN:
+	1r6/8/2pbk1p1/p4p2/2KPnP2/4P3/PB4PP/5R2 w - - 0 1
+
+Legale Züge (21):
+
+König: Kd3
+Turm: Ra1, Rb1, Rc1, Rd1, Re1, Rg1, Rh1, Rf2, Rf3
+Läufer: Ba1, Ba3, Bc1, Bc3
+Bauern: Pa3, Pa4, Pd5+, Pg3, Pg4, Ph3, Ph4
+
+== Stellung (Gruppe L) ==
+FEN:
+	2R5/2r2bkp/2n4p/1p6/4p2N/2K1n3/7B/8 w - - 0 1
+
+Legale Züge (20):
+
+König: : Kb2, Kd2
+Turm: : Ra8, Rb8, Rd8, Re8, Rf8, Rg8+, Rh8, Rxc7
+Springer: Nf3, Nf5+, Ng2, Ng6
+Läufer: Bg1, Bg3, Bf4, Be5+, Bd6, Bxc7
+
+== Stellung I (Gruppe J) ==
+FEN: 3k4/8/8/8/8/8/7r/3K4 w - - 0 1
+
+Legale Züge (2):
+Kc1, Ke1
+
+== Stellung I (Gruppe M) ==
+
+FEN: rnq1kb1r/p1ppppp1/1p6/7p/2PPb1nP/5N2/PP3P2/RNBQKBR1 w Qkq - 0 8
+
+Letzter  Zug: bb7 -> be4
+
+Legale Züge: 33
+
+Züge (6 Pawn, 7 Knight, 9 Bishop, 3 Rook, 6 Queen, 2 King):
+Pa3, Pa4, Pb3, Pb4, Pc5, Pd5, Nd2, Na3, Nc3, Nd2, Nh2, Ng5, Ne5, Bd2, Be3, Bf4, Bg5, Bh6, Be2, Bd3, Bg2, Bh3, Qe2, Qc2, Qb3, Qa4, Qd2, Qd3, Kd2, Ke2
+
+== Stellung II (Gruppe M) ==
+
+FEN: 1rbqk3/p1p3p1/np1p1n1r/B1b1pp1p/2P4P/3PP1P1/PP1QBP2/RN3KNR b - - 1 11
+
+Letzter Zug: Qe1 -> Qf1
+
+Legale Züge: 32
+
+Züge (7 Pawn, 7 Knight, 7 Bishop, 5 Rook, 2 Queen, 4 King):
+pg6, pg5, pf4, pe4, pd5, pc6, pb5, ng8, nh7, nd7, nd5, ne4, ng4, nb4, bd4, be3, bb4, ba3, bb7, bd7, be6, rg6, rh7, rh8, rb7, ra8, qd7, qe7, kd7, ke7, kf7, kf8
+
+
+== Stellung II (Gruppe J) ==
+FEN: r1bqkbnr/pppppppp/2n5/8/8/2N5/PPPPPPPP/R1BQKBNR w KQkq - 0 1
+
+Legale Züge (26):
+
+Pa3, Pa4, Pb3, Pb4, Pd3, Pd4, Pe3, Pe4, Pf3, Pf4, Pg3, Pg4, Ph3, Ph4, Rb1, Nb1, Na4, Ne4, Nb5, Nd5, Nf3, Nh3
+
+== Stellung I (Gruppe A) ==
+FEN: 2bqk2r/ppp4p/3npp2/n7/2pPPbBR/1Pr2N2/PBP4P/RN1QK3 w Qk - 0 1
+
+Legale Züge (32) (Bauernzüge: 7,  Pferdzüge: 7, Läuferzüge: 11, Damezügen: 4, Königzüge: 3)
+
+a2a4, b3b4, a2a3, d4d5, b1c3, f3e5, b2c1, g4f5, f3g5, d1e2, d1c1, g4h5, e1f2, g4h3, f3g1, e1f1, h2h3, h4h3, h4h5, h4h6, h4h7, b1a3, b2c3,b3c4, b2a3, b1d2, e4e5, g4e6, d1d3, f3d2, d1d2, e1e2
+
+== Stellung II (Gruppe A) ==
+FEN: 7k/1P4pp/4B3/3b1n2/6P1/5P2/3P2N1/3KQ3 w - - 0 1
+
+Legale Züge (31) (Bauernzüge: 9, Pferdzüge: 3, Läuferzüge: 6, Damenzüge: 10, Königzüge: 3)
+
+e6c8, e6g8, d1c2, g4f5, d1e2, d1c1, g2f4, e1f2, e1h4, b7b8r, g2h4, e1f1, b7b8q, e1h1, b7b8n, b7b8b, e6d7, e6d5, e6f7, e6f5, d2d4, e1e5, d2d3, f3f4, g4g5, e1e3, e1e4, g2e3, e1g3, e1e2, e1g1
+
+== Queen's gambit (Gruppe C) ==
+
+rnbkqbnr/ppp1pppp/8/3p4/2PP4/8/PP1PPPPP/RNBKQBNR b - 0 2
+
+letzter Zug: Pc2 -> c4
+
+legale Züge (30):
+
+Bauern (15): a6, a5, b6, b5, c6, c5, c4+, e6, e5, f6, f5, g6, g5, h6, h5;
+Springer (5): a6, c6, d7, f6, h6;
+Läufer (5): d7, e6, f5, g4, h3;
+König (1): d7;
+Königin (4): d7, c6, b5, a4;
+
+== Stellung 1 (Gruppe Q)
+5k1r/8/4B3/8/8/8/P7/KQ1N4 w - - 3 40
+
+Pawn (2): a3, a4
+King(1): b2
+Night (4): b2, c3, e3, f2
+Queen(14): b2, b3, b4, b5, b6, b7, b8, c1, c2, d3, d4, f5, g6, h7
+Bishop(10): d7, c8, f7, g8, d5, c4, b3, f5, g4, h3
+
+== Stellung 2 (Gruppe Q)
+5k1r/8/4B3/p7/PP6/8/P7/KQ1N4 b - - 0 30
+
+Pawn(1): b4
+King(5): g8, e8, g7, f7, e7
+Rook(8): g8. h1, h2, h3, h4, h5, h6, h7
+
+
+== Stellung 1: Start (Gruppe S) ==
+    FEN: rnbqkb1r/ppp1pppp/5n2/3p4/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 1
+        legale mögliche Züge: 32(P(13Züge),N(8),B(5), R(1),Q(4),K(1))
+
+== Stellung 2: Endspiel mit Turm  (Gruppe S) ==
+Endspiel mit Turm:
+    FEN: 8/8/8/8/2R5/6pk/1r6/6K1 w – 0 51
+        legale mögliche Züge: 16(R(14), K(2))
